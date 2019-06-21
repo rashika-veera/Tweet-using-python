@@ -1,0 +1,44 @@
+This is all about using python code to tweet messages over twitter . I chose the social media twitter because it is a fantastic 
+source to work with data . You can use it to get real-time news. You can use it for pretty much anything you can imagine, just as 
+long as you can get access to its data. And you can get access to its data through its API. To interact with the Twitter APIs 
+we’ll be using the Twython library. So, what actually an API is ? It is  a set of functions and procedures allowing the creation
+of applications that access the features or data. In order to use Twitter’s APIs, you need to get some credentials. SO , you needed
+an twitter account as an pre-requisite for this work . 
+Next what you have to do is . Getting the access tokens . There are 2 types of tokens actually . The consumer key and consumer secret
+tell Twitter what application is accessing its APIs, while the access token and access token secret tell Twitter who is accessing its 
+APIs. If you have ever used your Twitter account to log in to some other site, the “click to authorize” page was generating an access 
+token for that site to use to convince Twitter that it was you. To get this access token  you must create an app in twitter where
+basically you have to provide the details of Name of the project with description and URL. This will provide you consumer key and
+access token . Upon clicking create access token you will be provided with Consumer secret and access token secret.Then coding part
+has to be done using python in which tweepy module should be included . OAuth is an open-standard authorization protocol or framework
+that provides applications the ability for “secure designated access.” For example, you can tell Facebook that it’s OK for ESPN.com
+to access your profile or post updates to your timeline without having to give ESPN your Facebook password. This minimizes risk in a 
+major way: In the event ESPN suffers a breach, your Facebook password remains safe. 
+OAuth doesn’t share password data but instead uses authorization tokens to prove an identity between consumers and service providers.
+OAuth is an authentication protocol that allows you to approve one application interacting with another on your behalf without giving
+away your password.
+ # importing the module 
+import tweepy 
+  
+# personal details 
+consumer_key ="xxxxxxxxxxxxxxxx"
+consumer_secret ="xxxxxxxxxxxxxxxx"
+access_token ="xxxxxxxxxxxxxxxx"
+access_token_secret ="xxxxxxxxxxxxxxxx"
+  
+# authentication of consumer key and secret 
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret) 
+  
+# authentication of access token and secret 
+auth.set_access_token(access_token, access_token_secret) 
+api = tweepy.API(auth) 
+  
+# update the status 
+api.update_status(status ="Hello Everyone !") 
+
+image_path ="path of the image" # toDo 
+  
+# to attach the media file 
+status = api.update_with_media(image_path, tweet)  
+api.update_status(status = tweet) 
+
